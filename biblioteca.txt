@@ -1,0 +1,10 @@
+9780134685991|Effective Java|Joshua Bloch|5|2
+9781492078005|Designing Data-Intensive Applications|Martin Kleppmann|3|0
+9780132350884|Clean Code|Robert C. Martin|4|4
+9780201633610|Design Patterns|Erich Gamma|6|1
+9780131103627|The C Programming Language|Brian W. Kernighan|5|3
+9780262033848|Introduction to Algorithms|Thomas H. Cormen|7|3
+9780134494166|Clean Architecture|Robert C. Martin|4|1
+9780596009205|Head First Design Patterns|Eric Freeman|5|0
+9781617294945|Spring in Action|Craig Walls|3|1
+9780135974445|Artificial Intelligence A Modern Approach|Stuart Russell|6|2

@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package biblioteca;
+
+service BibliotecaService {
+  rpc ConsultarPorIsbn(ConsultaRequest) returns (ConsultaResponse);
+  rpc PrestarPorIsbn(PrestamoIsbnRequest) returns (PrestamoResponse);
+  rpc PrestarPorTitulo(PrestamoTituloRequest) returns (PrestamoResponse);
+  rpc DevolverPorIsbn(DevolucionRequest) returns (DevolucionResponse);
+}
+
+message ConsultaRequest {
+  string isbn = 1;
+}
+
+message ConsultaResponse {
+  bool existe = 1;
+  string mensaje = 2;
+
+  string isbn = 3;
+  string titulo = 4;
+  string autor = 5;
+  int32 total = 6;
+  int32 prestados = 7;
+  int32 disponibles = 8;
+}
+
+message PrestamoIsbnRequest {
+  string isbn = 1;
+}
+
+message PrestamoTituloRequest {
+  string titulo = 1;
+}
+
+message PrestamoResponse {
+  bool ok = 1;
+  string mensaje = 2;
+  string fecha_devolucion = 3; // yyyy-mm-dd si ok
+  int32 disponibles_restantes = 4;
+}
+
+message DevolucionRequest {
+  string isbn = 1;
+}
+
+message DevolucionResponse {
+  bool ok = 1;
+  string mensaje = 2;
+  int32 disponibles = 3;
+}
