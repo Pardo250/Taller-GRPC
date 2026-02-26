@@ -1,22 +1,36 @@
 syntax = "proto3";
 
+// El paquete biblioteca agrupa las definiciones para el sistema de biblioteca gRPC.
 package biblioteca;
 
+// BibliotecaService define las operaciones remotas disponibles para la gestión de libros.
 service BibliotecaService {
+  // Consulta la información detallada de un libro por su ISBN.
   rpc ConsultarPorIsbn(ConsultaRequest) returns (ConsultaResponse);
+
+  // Solicita el préstamo de un ejemplar de un libro a través de su ISBN.
   rpc PrestarPorIsbn(PrestamoIsbnRequest) returns (PrestamoResponse);
+
+  // Solicita el préstamo de un ejemplar de un libro a través de su título exacto.
   rpc PrestarPorTitulo(PrestamoTituloRequest) returns (PrestamoResponse);
+
+  // Registra la devolución de un ejemplar de un libro mediante su ISBN.
   rpc DevolverPorIsbn(DevolucionRequest) returns (DevolucionResponse);
 }
 
+// ── Consulta ──────────────────────────────────────────────────
+
+// ConsultaRequest contiene el ISBN del libro que se desea consultar.
 message ConsultaRequest {
   string isbn = 1;
 }
 
+// ConsultaResponse contiene los detalles técnicos y de disponibilidad del libro encontrado.
 message ConsultaResponse {
-  bool existe = 1;
-  string mensaje = 2;
+  bool existe = 1;      // True si el libro fue encontrado.
+  string mensaje = 2;   // Mensaje informativo (ej. error o confirmación).
 
+  // Campos de información (poblados solo si existe=true)
   string isbn = 3;
   string titulo = 4;
   string autor = 5;
@@ -25,27 +39,36 @@ message ConsultaResponse {
   int32 disponibles = 8;
 }
 
+// ── Préstamos ─────────────────────────────────────────────────
+
+// PrestamoIsbnRequest contiene el ISBN del libro que el usuario desea pedir prestado.
 message PrestamoIsbnRequest {
   string isbn = 1;
 }
 
+// PrestamoTituloRequest contiene el título del libro que el usuario desea pedir prestado.
 message PrestamoTituloRequest {
   string titulo = 1;
 }
 
+// PrestamoResponse indica si la operación de préstamo fue exitosa y los detalles de la misma.
 message PrestamoResponse {
-  bool ok = 1;
-  string mensaje = 2;
-  string fecha_devolucion = 3; // yyyy-mm-dd si ok
-  int32 disponibles_restantes = 4;
+  bool ok = 1;                  // True si se pudo realizar el préstamo.
+  string mensaje = 2;           // Mensaje indicando éxito o motivo del fallo.
+  string fecha_devolucion = 3;  // Fecha pactada de devolución (formato ISO 8601).
+  int32 disponibles_restantes = 4; // Ejemplares disponibles tras la operación.
 }
 
+// ── Devolución ───────────────────────────────────────────────
+
+// DevolucionRequest contiene el ISBN del libro que se desea devolver.
 message DevolucionRequest {
   string isbn = 1;
 }
 
+// DevolucionResponse confirma si la devolución fue procesada correctamente.
 message DevolucionResponse {
-  bool ok = 1;
-  string mensaje = 2;
-  int32 disponibles = 3;
+  bool ok = 1;           // True si la devolución fue registrada.
+  string mensaje = 2;    // Detalle del resultado.
+  int32 disponibles = 3; // Cantidad total de ejemplares disponibles tras la devolución.
 }
