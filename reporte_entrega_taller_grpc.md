@@ -65,5 +65,4 @@ Todas las pruebas unitarias y de integración han sido ejecutadas exitosamente. 
 - [x] Devoluciones que incrementan el stock disponible.
 
 ---
-**Firmado:**  
-*Equipo de Desarrollo - Taller Sistemas Distribuidos*
+

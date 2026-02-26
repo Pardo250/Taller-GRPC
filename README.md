@@ -1,4 +1,4 @@
-# 📚 Sistema de Biblioteca — gRPC
+# Sistema de Biblioteca — gRPC
 
 Sistema de gestión de biblioteca remoto implementado con **Python 3** y **gRPC** para el taller de Introducción a Sistemas Distribuidos (Febrero 2026).
 
@@ -76,7 +76,7 @@ python server.py
 ```
 Salida esperada:
 ```
-✅ Servidor gRPC activo en puerto 50051
+Servidor gRPC activo en puerto 50051
 ```
 
 **Terminal 2 — Cliente:**
@@ -231,4 +231,4 @@ El servidor soporta **hasta 10 clientes simultáneos** mediante `ThreadPoolExecu
 
 ## Autores
 
-Taller de Introducción a Sistemas Distribuidos — Facultad de Ingeniería, Departamento de Ingeniería de Sistemas.
+Juan Ignacio Pardo, Juan Sebastian Urbano — Facultad de Ingeniería, Departamento de Ingeniería de Sistemas.
