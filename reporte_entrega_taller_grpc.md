@@ -3,6 +3,7 @@
 **Proyecto:** Sistema Remoto de Gestión de Biblioteca  
 **Fecha:** 26 de Febrero de 2026  
 **Tecnologías:** Python 3, gRPC, Protocol Buffers
+**Integrantes:** Juan Sebastian Urbano, Juan Diego Pardo
 
 ---
 
