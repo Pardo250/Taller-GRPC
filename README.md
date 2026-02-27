@@ -231,4 +231,4 @@ El servidor soporta **hasta 10 clientes simultáneos** mediante `ThreadPoolExecu
 
 ## Autores
 
-Juan Ignacio Pardo, Juan Sebastian Urbano — Facultad de Ingeniería, Departamento de Ingeniería de Sistemas.
+Juan Diego Pardo, Juan Sebastian Urbano — Facultad de Ingeniería, Departamento de Ingeniería de Sistemas.
